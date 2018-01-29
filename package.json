@@ -1,0 +1,11 @@
+{
+  "name": "cv",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "nricardo <nelson.s.ricardo@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.17.1",
+    "json-templates": "^2.0.0"
+  }
+}

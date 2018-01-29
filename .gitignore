@@ -1,0 +1,11 @@
+# dependencies
+node_modules/
+
+# data files
+# data/
+
+# generated files
+output/
+
+# editors stuff
+.vscode/
