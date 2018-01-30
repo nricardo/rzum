@@ -11,8 +11,8 @@
       "address": "{{basic.address.street}}",
       "postalCode": "{{basic.address.postalcode}}",
       "city": "{{basic.address.city}}",
-      "countryCode": "{{basic.address.country}}",
-      "region": "{{basic.address.region}}"
+      "countryCode": "{{basic.address.country.code}}",
+      "region": "{{basic.address.country.name}}"
     },
     "profiles": [{
       "network": "",

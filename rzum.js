@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const fs = require('fs');
 const axios = require('axios');
 const jsonTemplates = require('json-templates');
@@ -15,11 +17,52 @@ const API = {
   PDF: '/document/to/pdf-cv',
 };
 
-// generates CV in PDF format
+// request CV in PDF format from external service (Europass REST API)
 async function generatePDF(json) {
   return await axios.post(`${API.URL}${API.PDF}`, json, { responseType: 'stream' }).then(res => {
     return res.data;
   });
+}
+
+// generates Europass CV
+async function generateEuropass(data) {
+  // read template
+  console.log('  - loading Europass template...');
+  const template = require('./templates/europass.json');
+
+  // build template
+  const europass = jsonTemplates(template);
+
+  // compile final JSON template
+  console.log('  - compiling template with data...');
+  const json = europass(data);
+
+  // verify against schema
+  // console.log(' => verifing data against schema...');
+
+  // generate PDF
+  console.log('  - requesting PDF generation...');
+  const pdf = await generatePDF(json);
+
+  // write PDF to output
+  const filename = `${OUTPUT.FOLDER}${OUTPUT.FILENAME}.${OUTPUT.FORMAT}`;
+  console.log(`  - writing into file: "${filename}"...`);
+  pdf.pipe(fs.createWriteStream(filename));
+}
+
+async function generateResume(data, format = 'html') {
+  // read template
+  console.log('  - loading JSON Résumé template...');
+  const template = require('./templates/resume.json');
+
+  // build template
+  const resume = jsonTemplates(template);
+
+  // compile final JSON template
+  console.log('  - compiling template with data...');
+  const json = resume(data);
+
+  console.log(json)
 }
 
 // ------------------------------------------------------------------------
@@ -29,29 +72,16 @@ async function Rzum() {
   {
     console.log('Rzum :: Resume generator from JSON data ::');
 
-    // read template
-    const template = require('./templates/europass.json');
-
-    // parse template
-    const parsed = jsonTemplates(template);
-
     // read input data
-    const data = require('./data/basic');
+    console.log(' => reading data files...');
+    const data = require('./data');
 
-    // inject data and compile into final template
-    const CV = parsed(data);
-
-    // verify against schema
-    console.log(' => verifing data against schema...');
-
-    // generate PDF
+    // create PDF's from this data file...
     console.log(' => generating resumé in PDF format...');
-    const pdf = await generatePDF(CV);
+    await generateEuropass(data);
 
-    // write PDF to output
-    const filename = `${OUTPUT.FOLDER}${OUTPUT.FILENAME}.${OUTPUT.FORMAT}`;
-    console.log(` => writing PDF resumé into "${filename}"...`);
-    pdf.pipe(fs.createWriteStream(filename));
+    console.log(' => generating resumé in HTML format...');
+    await generateResume(data, 'html');
 
     console.log(' * All done! Enjoy your new resumé!!');
   }
