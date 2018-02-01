@@ -1,8 +1,8 @@
 {
   "basics": {
     "name": "{{basic.id.firstname}} {{basic.id.lastname}}",
-    "label": "{{basic.id.}}",
-    "picture": "",
+    "label": "{{basic.id.label}}",
+    "picture": "{{basic.id.photo}}",
     "email": "{{basic.id.email}}",
     "phone": "{{basic.id.phone}}",
     "website": "{{basic.id.website}}",
@@ -15,9 +15,9 @@
       "region": "{{basic.address.country.name}}"
     },
     "profiles": [{
-      "network": "",
+      "network": "Github",
       "username": "nricardo",
-      "url": "http://twitter.com/john"
+      "url": "https://github.com/nricardo"
     }]
   },
   "work": [{
@@ -31,17 +31,7 @@
       "Started the company"
     ]
   }],
-  "volunteer": [{
-    "organization": "Organization",
-    "position": "Volunteer",
-    "website": "http://organization.com/",
-    "startDate": "2012-01-01",
-    "endDate": "2013-01-01",
-    "summary": "Description...",
-    "highlights": [
-      "Awarded 'Volunteer of the Month'"
-    ]
-  }],
+  "volunteer": [],
   "education": [{
     "institution": "University",
     "area": "Software Development",

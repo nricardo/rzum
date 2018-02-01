@@ -8,6 +8,7 @@
   "preferGlobal": true,
   "dependencies": {
     "axios": "^0.17.1",
+    "commander": "^2.13.0",
     "json-templates": "^2.0.0"
   }
 }
