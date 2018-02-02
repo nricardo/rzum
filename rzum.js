@@ -35,7 +35,8 @@ async function generateEuropass(data) {
 
   // compile final JSON template
   console.log('  - compiling template with data...');
-  const json = europass(data);
+  // const json = europass(data);
+  const json = require('./data/europass.nricardo.json');
 
   // verify against schema
   // console.log(' => verifing data against schema...');
