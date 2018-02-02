@@ -1,7 +1,10 @@
 #!/usr/bin/env node
 
+const pkg = require('./package.json');
+
 const fs = require('fs');
 const axios = require('axios');
+const program = require('commander');
 const jsonTemplates = require('json-templates');
 
 // -- OUTPUT OPTIONS --
@@ -69,8 +72,7 @@ async function generateResume(data, format = 'html') {
 // ------------------------------------------------------------------------
 async function Rzum() {
 
-  try
-  {
+  try {
     console.log('Rzum :: Resume generator from JSON data ::');
 
     // read input data
@@ -93,4 +95,34 @@ async function Rzum() {
 }
 
 // start things up!
-Rzum();
+//Rzum();
+
+
+
+
+
+// -- define prog parameters
+program
+  .usage("[options] <command>")
+  .arguments('<command>')
+  .version(`${pkg.name} v${pkg.version}`)
+  .option('-t, --theme <theme name>', 'Specify résumé theme (exceptt for Europass)', 'flat');
+
+program
+  .command('generate')
+  .alias('g')
+  .description('generates the résumé in the specifed format (default is HTML)')
+  .option('-f, --format <format>',
+    `Generates résumé in the specified formats (default: html):
+      - html:     creates a single HTML5 page using the given theme (default: flat);
+      - pdf:      output will be a PDF print version of the HTML ;
+      - json:     produces a JSON file compatible with JSONResume schema (https://jsonresume.org/schema/);
+      - europass: generates a Europass CV in PDF+XML schema (http://interop.europass.cedefop.europa.eu/);
+    `,
+    '^(html|pdf|json|europass)$/i',
+    'html'
+  );
+
+program.parse(process.argv);
+
+console.log(program.args)
