@@ -1,29 +1,33 @@
 'use strict';
 
+const fs = require('fs');
 const jsonTemplates = require('json-templates');
-const debug = require('debug')('Generators:HTML');
+const debug = require('debug')('Rzum:HTML');
 
-// generates Europass CV
-async function generateResume(data, filename) {
-  // read template
-  debug('  - loading JSON Résumé template...');
-  const template = require('../templates/resume.json');
+class HTML {
 
-  // compile final JSON template
-  debug('  - compiling template with data...');
-  const resume = jsonTemplates(template);
-  const json = resume(data);
+  // generates an HTML résumé
+  async generate(data, filename) {
+    // read template
+    debug('loading JSON Résumé template...');
+    const template = require('../templates/resume.json');
 
-  // verify against schema
-  // debug.info(' => verifing data against schema...');
+    // compile final JSON template
+    debug('compiling template with data...');
+    const resume = jsonTemplates(template);
+    const json = resume(data);
 
-  // creating HTML page
-  debug('  - creating HTML page...');
-  const html = `<html></html>`; // await
+    // verify against schema
+    // debug.info(' => verifing data against schema...');
 
-  // write HTML to output file
-  debug(`  - writing into file: "${filename}"...`);
-  // html.pipe(fs.createWriteStream(filename));
+    // creating HTML page
+    debug('creating HTML page...');
+    const html = `<html></html>`; // await
+
+    // write PDF to output file
+    debug(`writing into file: "${filename}"...`);
+    fs.writeFileSync(filename, html);
+  }
 }
 
-module.exports = generateResume;
+module.exports = HTML;

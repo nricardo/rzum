@@ -3,38 +3,22 @@
 const HTML = require('./html');
 const Europass = require('./europass');
 
-const debug = require('debug')('Rzum:Generators:');
+class GeneratorFactory {
 
-class Generators {
-  constructor(filename) {
-    this.filename = filename;
-  }
-
-  async delegate(options) {
-    options = options || {};
-    console.log(options.format)
-
-    debug('Rzum :: Résumé generator from JSON data ::');
-
-    // read input data
-    debug(' => reading data files...');
-    const data = require('../data');
-
+  static getGenerator(format) {
     // check output format
-    switch (options.format) {
+    switch (format) {
       case 'europass':
-        debug(' => generating Europass...');
-        await Europass(data, this.filename);
-        break;
+        return new Europass(this.filename);
 
       case 'html':
-        debug(' => generating HTML format...');
-        await HTML(data, this.filename);
-        break;
-    }
+        return new HTML(this.filename);
 
-    debug(' * All done! Enjoy your new résumé!!');
+      default:
+        throw new Error('unsupported format');
+    }
   }
+
 }
 
-module.exports = Generators;
+module.exports = GeneratorFactory;
