@@ -14,7 +14,14 @@ class GeneratorFactory {
       case 'html':
         return new HTML(this.filename);
 
+      case 'pdf':
+        throw new Error('not implemented yet!!');
+
       default:
+        if (typeof format === 'undefined')
+          throw new Error('no format defined!');
+        if (typeof format === 'string')
+          throw new Error('unsupported format: ' + format);
         throw new Error('unsupported format');
     }
   }
