@@ -5,8 +5,6 @@ const program = require('commander');
 const jsonTemplates = require('json-templates');
 
 const pkg = require('./package.json');
-
-// our custom Logger
 const Logger = require('./logger');
 
 // import our generators
@@ -23,6 +21,7 @@ class Rzum {
 
       program
         .version(`${pkg.name} v${pkg.version}`)
+        .option('-v, --verbose [level]', 'be verbose on logging', '1')
         .command('generate <filename>').alias('g')
         .description('Generates résumé in different type of output formats.')
         .option('-f, --format <format>', `defines the format for the output:
@@ -37,7 +36,7 @@ class Rzum {
           log.info(':: Résumé generator from JSON data ::');
 
           // read input data
-          log.info('reading data files...');
+          log.verbose('reading data files...');
           const data = require('./data');
 
           // get a generator for the needed format
@@ -46,7 +45,7 @@ class Rzum {
           // now generate with given json data
           generator.generate(data, filename);
 
-          log.info(' * All done! Enjoy your new résumé!!');
+          log.verbose(' * All done! Enjoy your new résumé!!');
         });
 
       program.parse(process.argv);

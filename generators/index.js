@@ -1,5 +1,6 @@
 'use strict';
 
+const JSON = require('./json');
 const HTML = require('./html');
 const Europass = require('./europass');
 
@@ -9,10 +10,13 @@ class GeneratorFactory {
     // check output format
     switch (format) {
       case 'europass':
-        return new Europass(this.filename);
+        return new Europass();
+
+      case 'json':
+        return new JSON();
 
       case 'html':
-        return new HTML(this.filename);
+        return new HTML();
 
       case 'pdf':
         throw new Error('not implemented yet!!');

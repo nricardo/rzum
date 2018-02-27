@@ -11,5 +11,8 @@
     "commander": "^2.13.0",
     "debug": "^3.1.0",
     "json-templates": "^2.0.0"
+  },
+  "devDependencies": {
+    "supports-color": "^5.2.0"
   }
 }
