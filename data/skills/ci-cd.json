@@ -1,0 +1,13 @@
+{
+  "section": "Continuous Integration / Continuous Deployment",
+  "skills": [
+    {
+      "name": "Jenkins",
+      "level": 0
+    },
+    {
+      "name": "Docker",
+      "level": 0
+    }
+  ]
+}

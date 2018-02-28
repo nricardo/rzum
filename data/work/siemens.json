@@ -1,11 +1,25 @@
 {
-  "company": "Siemens",
-  "position": "Software Developer",
-  "website": "http://company.com",
-  "startDate": "2013-01-01",
-  "endDate": "2014-01-01",
-  "summary": "Description...",
+  "company": "Siemens / Nokia Siemens Networks",
+  "website": "https://www.siemens.com/global/en/home.html",
+  "position": "Software Engineer",
+  "period": {
+    "bgn": { "year": 2005, "month": 1 },
+    "end": { "year": 2008, "month": 9 }
+  },
+  "summary": "<u><b>OCU / MTS</b> project</u>\nAnalysis, design and development the embedded application (Linux OS) for the control and management of devices (ASICs/FPGAs) and optical modules (lasers) used in DWDM optical networks.\nTest specification and integration between SW and HW.\nCustomer support in the optimization and correction of deployed systems on their networks.\n Improvements of the production environment and code generation (Makefiles / Scripts).\n<u><b>INOV</b> project</u>\nSubmission of an Invention Report (patent candidate) of a control algorithm for spectral power distribution used in optical DGE modules with the title \"Efficient Signal Equalization via Real Time Adaptation of Gaussian Filters\".",
   "highlights": [
-    "Started the company"
-  ]
+  ],
+  "address": {
+    "street": "Rua Irmãos Siemens, N1",
+    "postal": {
+      "code": "",
+      "region": "Alfragide"
+    },
+    "city": "Lisboa",
+    "country": {
+      "code": "PT",
+      "name": "Portugal"
+    }
+  },
+  "sector": "Telecommunications"
 }

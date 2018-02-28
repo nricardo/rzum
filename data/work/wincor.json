@@ -1,0 +1,12 @@
+{
+  "company": "Wincor Nixdorf Portugal",
+  "position": "Software Engineer",
+  "period": {
+    "bgn": { "year": 2008, "month": 10 },
+    "end": { "year": 2010, "month": 3 }
+  },
+  "summary": "<u><b>TPLinux</b> project</u>\nDevelopment of new features and maintenance of the POS as well as the back-office applications.\n<u><b>Proview</b> project</u>\nPoC (Prof of Concept) and Roll-Out of the monitoring of ATM's agent.\nManage incidents / problems in the customer's ATM network with WN. Establishing correlations and filters for early identification of anomalies in HW. Design and integration with external tools (SIBS / EMIS).",
+  "highlights": [
+  ],
+  "sector": "Banking and Retail Solutions"
+}

@@ -1,0 +1,25 @@
+{
+  "section": "Database Development",
+  "skills": [
+    {
+      "name": "MongoDB",
+      "level": 0
+    },
+    {
+      "name": "ElasticSearch",
+      "level": 0
+    },
+    {
+      "name": "DSE Graph | Gremlin",
+      "level": 0
+    },
+    {
+      "name": "mySQL",
+      "level": 0
+    },
+    {
+      "name": "SQL Server",
+      "level": 0
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "section": "Programming Languages",
+  "skills": [
+    {
+      "name": "C/C++",
+      "level": 0
+    },
+    {
+      "name": "Java",
+      "level": 0
+    },
+    {
+      "name": "JavaScript",
+      "level": 0
+    },
+    {
+      "name": "PHP",
+      "level": 0
+    },
+    {
+      "name": "Shell scripting (Bash)",
+      "level": 0
+    }
+  ]
+}

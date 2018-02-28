@@ -28,8 +28,8 @@ class Rzum {
             - html:     creates a single HTML5 page using the given theme;
             - pdf:      output will be a PDF print version of the HTML format;
             - json:     produces a JSON file compatible with JSONResume schema (https://jsonresume.org/schema/);
-            - europass: generates a Europass CV in PDF+XML schema (http://interop.europass.cedefop.europa.eu/);
-            `, /^(html|pdf|json|europass)$/i)
+            - euro: generates a Europass CV in PDF+XML schema (http://interop.europass.cedefop.europa.eu/);
+            `, /^(html|pdf|json|euro)$/i)
         .option('-t, --theme <theme>', 'specify résumé theme (except for Europass)', 'flat')
         .option('-o, --output <filename>', 'writes output to filename')
         .action((filename, options) => {

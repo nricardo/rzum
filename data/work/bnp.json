@@ -1,0 +1,25 @@
+{
+  "company": "BNP Paribas Portugal",
+  "website": "http://www.bnpparibas.pt",
+  "position": "Senior Sofware Engineer / Web Developer",
+  "period": {
+    "bgn": { "year": 2017, "month": 6 },
+    "end": { "year": 2017, "month": 12 }
+  },
+  "summary": "Design and implementation of a software solution for staff management and project planning (time allocation, skill management, ...).",
+  "highlights": [
+  ],
+  "address": {
+    "street": "Torre Ocidente, Rua Galileu Galilei, 2, 13º",
+    "postal": {
+      "code": "1500-392",
+      "region": "Lisboa"
+    },
+    "city": "Lisboa",
+    "country": {
+      "code": "PT",
+      "name": "Portugal"
+    }
+  },
+  "sector": "Banking and Financial Services"
+}

@@ -1,0 +1,33 @@
+{
+  "section": "Web Development",
+  "skills": [
+    {
+      "name": "Angular.js",
+      "level": 0
+    },
+    {
+      "name": "HTML5",
+      "level": 0
+    },
+    {
+      "name": "CSS3",
+      "level": 0
+    },
+    {
+      "name": "XML / XSLT",
+      "level": 0
+    },
+    {
+      "name": "NodeJS",
+      "level": 0
+    },
+    {
+      "name": "Express.js",
+      "level": 0
+    },
+    {
+      "name": "REST",
+      "level": 0
+    }
+  ]
+}

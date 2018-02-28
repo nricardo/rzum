@@ -3,7 +3,8 @@
 const fs = require('fs');
 const axios = require('axios');
 const jsonTemplates = require('json-templates');
-const debug = require('debug')('Rzum:Europass');
+
+const Logger = require('../logger');
 
 // -- EUROPASS API --
 const API = {
@@ -12,6 +13,10 @@ const API = {
 };
 
 class Europass {
+
+  constructor () {
+    this.log = new Logger(Europass.name);
+  }
 
   // request CV in PDF format from external service (Europass REST API)
   async generatePDF(json) {
@@ -22,24 +27,27 @@ class Europass {
 
   // generates Europass CV
   async generate(data, filename) {
+    this.log.info('generating Europass résumé...');
+
     // read template
-    debug('loading Europass template...');
-    const template = require('../templates/europass.json');
+    this.log.verbose('loading Europass template...');
+    // const template = require('../templates/europass.json');
+    const template = require('../data/europass.nricardo.json');
 
     // compile final JSON template
-    debug('compiling template with data...');
+    this.log.verbose('compiling template with data...');
     const europass = jsonTemplates(template);
     const json = europass(data);
 
     // verify against schema
-    // debug(' => verifing data against schema...');
+    // this.log.verbose(' => verifing data against schema...');
 
     // generate PDF
-    debug('requesting PDF generation...');
+    this.log.verbose('requesting PDF generation...');
     const pdf = await this.generatePDF(json);
 
     // write PDF to output file
-    debug(`writing into file: "${filename}"...`);
+    this.log.verbose(`writing into file: "${filename}"...`);
     pdf.pipe(fs.createWriteStream(filename));
   }
 

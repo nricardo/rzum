@@ -9,7 +9,7 @@ class GeneratorFactory {
   static getGenerator(format) {
     // check output format
     switch (format) {
-      case 'europass':
+      case 'euro':
         return new Europass();
 
       case 'json':
