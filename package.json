@@ -10,7 +10,11 @@
     "axios": "^0.17.1",
     "commander": "^2.13.0",
     "debug": "^3.1.0",
-    "json-templates": "^2.0.0"
+    "dotenv": "^5.0.1",
+    "dustjs-helpers": "^1.7.4",
+    "dustjs-linkedin": "^2.7.5",
+    "jsont": "^0.1.2",
+    "mustache": "^2.3.0"
   },
   "devDependencies": {
     "supports-color": "^5.2.0"

@@ -6,9 +6,7 @@
     "bgn": { "year": 2005, "month": 1 },
     "end": { "year": 2008, "month": 9 }
   },
-  "summary": "<u><b>OCU / MTS</b> project</u>\nAnalysis, design and development the embedded application (Linux OS) for the control and management of devices (ASICs/FPGAs) and optical modules (lasers) used in DWDM optical networks.\nTest specification and integration between SW and HW.\nCustomer support in the optimization and correction of deployed systems on their networks.\n Improvements of the production environment and code generation (Makefiles / Scripts).\n<u><b>INOV</b> project</u>\nSubmission of an Invention Report (patent candidate) of a control algorithm for spectral power distribution used in optical DGE modules with the title \"Efficient Signal Equalization via Real Time Adaptation of Gaussian Filters\".",
-  "highlights": [
-  ],
+  "summary": "<u><b>OCU / MTS</b> project</u><br>Analysis, design and development the embedded application (Linux OS) for the control and management of devices (ASICs/FPGAs) and optical modules (lasers) used in DWDM optical networks.<br>Test specification and integration between SW and HW.<br>Customer support in the optimization and correction of deployed systems on their networks.<br> Improvements of the production environment and code generation (Makefiles / Scripts).<br><u><b>INOV</b> project</u><br>Submission of an Invention Report (patent candidate) of a control algorithm for spectral power distribution used in optical DGE modules with the title 'Efficient Signal Equalization via Real Time Adaptation of Gaussian Filters'.",
   "address": {
     "street": "Rua Irmãos Siemens, N1",
     "postal": {

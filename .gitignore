@@ -7,6 +7,9 @@ node_modules/
 # generated files
 output/
 
+# environment config
+.env
+
 # log files
 *.log
 

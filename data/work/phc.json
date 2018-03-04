@@ -6,7 +6,7 @@
     "bgn": { "year": 2014, "month": 9 },
     "end": { "year": 2016, "month": 8 }
   },
-  "summary": "<u><b><a href=\"https://www.drivefx.net/\" target=\"_blank\">Drive FX</a></b></u>\nImplementation from the ground-up of the new platform / framework the FX project composed by Billing (invoicing), Business (management) and the POS components.",
+  "summary": "<u><b><a href='https://www.drivefx.net' target='_blank'>Drive FX</a></b></u><br>Implementation from the ground-up of the new platform / framework the FX project composed by Billing (invoicing), Business (management) and the POS components.",
   "highlights": [
   ],
   "address": {

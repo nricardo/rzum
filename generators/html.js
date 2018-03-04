@@ -1,7 +1,7 @@
 'use strict';
 
 const fs = require('fs');
-const jsonTemplates = require('json-templates');
+const jsonT = require('jsont');
 
 const Logger = require('../logger');
 

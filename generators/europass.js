@@ -2,7 +2,7 @@
 
 const fs = require('fs');
 const axios = require('axios');
-const jsonTemplates = require('json-templates');
+const JSONt = require('jsont')();
 
 const Logger = require('../logger');
 
@@ -31,24 +31,26 @@ class Europass {
 
     // read template
     this.log.verbose('loading Europass template...');
-    // const template = require('../templates/europass.json');
-    const template = require('../data/europass.nricardo.json');
+    const europass = require('../templates/europass.json');
 
     // compile final JSON template
     this.log.verbose('compiling template with data...');
-    const europass = jsonTemplates(template);
-    const json = europass(data);
+    JSONt.render(europass, data, async (err, json) => {
+      if (err) this.log.error(err);
+      console.log(json)
 
-    // verify against schema
-    // this.log.verbose(' => verifing data against schema...');
+      // verify against schema
+      // this.log.verbose(' => verifing data against schema...');
 
-    // generate PDF
-    this.log.verbose('requesting PDF generation...');
-    const pdf = await this.generatePDF(json);
+      // generate PDF
+      this.log.verbose('requesting PDF generation...');
+      const pdf = await this.generatePDF(json);
 
-    // write PDF to output file
-    this.log.verbose(`writing into file: "${filename}"...`);
-    pdf.pipe(fs.createWriteStream(filename));
+      // write PDF to output file
+      this.log.verbose(`writing into file: "${filename}"...`);
+      pdf.pipe(fs.createWriteStream(filename));
+
+    });
   }
 
 }

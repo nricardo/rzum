@@ -2,8 +2,6 @@
 'use strict';
 
 const program = require('commander');
-const jsonTemplates = require('json-templates');
-
 const pkg = require('./package.json');
 const Logger = require('./logger');
 
@@ -36,7 +34,7 @@ class Rzum {
           log.info(':: Résumé generator from JSON data ::');
 
           // read input data
-          log.verbose('reading data files...');
+          log.debug('reading data files...');
           const data = require('./data');
 
           // get a generator for the needed format
@@ -45,7 +43,7 @@ class Rzum {
           // now generate with given json data
           generator.generate(data, filename);
 
-          log.verbose(' * All done! Enjoy your new résumé!!');
+          log.info('All done! Enjoy your new résumé!!');
         });
 
       program.parse(process.argv);

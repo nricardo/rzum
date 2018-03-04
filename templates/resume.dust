@@ -1,18 +1,18 @@
 {
   "basics": {
-    "name": "{{basic.id.firstname}} {{basic.id.lastname}}",
-    "label": "{{basic.id.label}}",
-    "picture": "{{basic.id.photo}}",
-    "email": "{{basic.id.email}}",
-    "phone": "{{basic.id.phone}}",
-    "website": "{{basic.id.website}}",
-    "summary": "{{basic.id.summary}}",
+    "name": "{basic.id.firstname} {basic.id.lastname}",
+    "label": "{basic.id.label}",
+    "picture": "{basic.id.photo}",
+    "email": "{basic.id.email}",
+    "phone": "{basic.id.phone}",
+    "website": "{basic.id.website}",
+    "summary": "{basic.id.summary}",
     "location": {
-      "address": "{{basic.address.street}}",
-      "postalCode": "{{basic.address.postalcode}}",
-      "city": "{{basic.address.city}}",
-      "countryCode": "{{basic.address.country.code}}",
-      "region": "{{basic.address.country.name}}"
+      "address": "{basic.address.street}",
+      "postalCode": "{#basic.address.postal}{code}{/basic.address.postal}",
+      "city": "{basic.address.city}",
+      "countryCode": "{basic.address.country.code}",
+      "region": "{basic.address.country.name}"
     },
     "profiles": [{
       "network": "Github",
@@ -20,17 +20,14 @@
       "url": "https://github.com/nricardo"
     }]
   },
-  "work": [{
-    "company": "Company",
-    "position": "President",
-    "website": "http://company.com",
-    "startDate": "2013-01-01",
-    "endDate": "2014-01-01",
-    "summary": "Description...",
-    "highlights": [
-      "Started the company"
-    ]
-  }],
+  "work": [{#work}{
+    "company": "{company}",
+    "position": "{position}",
+    "website": "{website}",
+    "startDate": "{#period.bgn}{month} {year}{/period.bgn}",
+    "endDate": "{#period.end}{month} {year}{/period.end}",
+    "summary": "{summary|s}"
+  }{@sep},{/sep}{/work}],
   "volunteer": [],
   "education": [{
     "institution": "University",

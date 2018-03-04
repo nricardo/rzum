@@ -1,14 +1,14 @@
 'use strict';
 
 const fs = require('fs');
-const jsonTemplates = require('json-templates');
-
 const Logger = require('../logger');
+const Templr = require('../templr');
 
 class jSON {
 
   constructor () {
-    this.log = new Logger(jSON.name);
+    this.log = new Logger('JSON');
+    this.tmplr = new Templr();
   }
 
   // generates an JSON résumé
@@ -17,19 +17,27 @@ class jSON {
 
     // read template
     this.log.debug('loading template...');
-    const template = require('../templates/resume.json');
+    const template = fs.readFileSync('templates/resume.dust', 'utf-8');
 
     // compile final JSON template
-    this.log.debug('compiling template with data...');
-    const resume = jsonTemplates(template);
-    const json = resume(data);
+    this.log.debug('rendering template with data...');
+    this.tmplr.render(template, data);
+
+    // resume = JSON.parse(resume);
+    // fs.writeSync(0, JSON.stringify(resume, null, 2));
+
+
+
+
+    // JSON.parse(json);
+    // console.log(json)
 
     // verify against schema
-    this.log.debug('verifing against schema...');
+    // this.log.debug('verifing against schema...');
 
-    // write PDF to output file
-    this.log.debug(`writing into file: "${filename}"...`);
-    fs.writeFileSync(filename, JSON.stringify(json));
+    // write output to file
+    // this.log.debug(`writing into file: "${filename}"...`);
+    // fs.writeFileSync(filename, resume);
   }
 }
 
