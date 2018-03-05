@@ -1,10 +1,10 @@
 'use strict';
 
 const fs = require('fs');
+const Ajv = require('ajv');
 const axios = require('axios');
-const JSONt = require('jsont')();
-
 const Logger = require('../logger');
+const Templr = require('../templr');
 
 // -- EUROPASS API --
 const API = {
@@ -14,15 +14,21 @@ const API = {
 
 class Europass {
 
-  constructor () {
+  constructor() {
+    this.ajv = new Ajv();
+    this.tmplr = new Templr();
     this.log = new Logger(Europass.name);
   }
 
   // request CV in PDF format from external service (Europass REST API)
   async generatePDF(json) {
-    return await axios.post(`${API.URL}${API.PDF}`, json, { responseType: 'stream' }).then(res => {
-      return res.data;
-    });
+    return await axios.post(`${API.URL}${API.PDF}`, json, { responseType: 'stream' })
+      .then(res => {
+        return res.data;
+      })
+      .catch(err => {
+        throw new Error(`Couldn't generate Europass PDF`);
+      });
   }
 
   // generates Europass CV
@@ -30,27 +36,28 @@ class Europass {
     this.log.info('generating Europass résumé...');
 
     // read template
-    this.log.verbose('loading Europass template...');
-    const europass = require('../templates/europass.json');
+    this.log.debug('loading Europass template...');
+    const template = fs.readFileSync('templates/europass.dust', 'utf-8');
 
     // compile final JSON template
-    this.log.verbose('compiling template with data...');
-    JSONt.render(europass, data, async (err, json) => {
-      if (err) this.log.error(err);
-      console.log(json)
+    this.log.debug('rendering template with data...');
+    const resume = await this.tmplr.render(template, data);
 
-      // verify against schema
-      // this.log.verbose(' => verifing data against schema...');
+    // verify against schema
+    this.log.debug('validating against schema...');
+    const schema = fs.readFileSync('schemas/europass-schema.json');
+    // const valid = this.ajv.validate(schema, resume);
+    // if (!valid) throw new Error('generated JSON file is not valid... Please check data!');
 
-      // generate PDF
-      this.log.verbose('requesting PDF generation...');
-      const pdf = await this.generatePDF(json);
+    // generate PDF
+    this.log.debug('requesting PDF generation...');
+    const json = JSON.parse(resume);
+    // console.log(JSON.stringify(json, null, 2))
+    const pdf = await this.generatePDF(json);
 
-      // write PDF to output file
-      this.log.verbose(`writing into file: "${filename}"...`);
-      pdf.pipe(fs.createWriteStream(filename));
+    pdf.pipe(fs.createWriteStream('test.pdf'));
 
-    });
+    // return pdf;
   }
 
 }

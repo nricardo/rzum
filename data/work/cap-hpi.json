@@ -7,7 +7,17 @@
     "end": null
   },
   "summary": "Nearshore project (fullstack)",
-  "highlights": [
-  ],
+  "address": {
+    "street": "Av. Duque de Ávila, 46",
+    "postal": {
+      "code": "1050-083",
+      "region": "Lisboa"
+    },
+    "city": "Lisboa",
+    "country": {
+      "code": "PT",
+      "name": "Portugal"
+    }
+  },
   "sector": "Automotive Industry"
 }

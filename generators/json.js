@@ -12,32 +12,18 @@ class jSON {
   }
 
   // generates an JSON résumé
-  async generate(data, filename) {
+  async generate(data) {
     this.log.info('generating JSON résumé...');
 
     // read template
-    this.log.debug('loading template...');
+    this.log.debug('loading Résumé template...');
     const template = fs.readFileSync('templates/resume.dust', 'utf-8');
 
     // compile final JSON template
     this.log.debug('rendering template with data...');
-    this.tmplr.render(template, data);
+    const resume = await this.tmplr.render(template, data);
 
-    // resume = JSON.parse(resume);
-    // fs.writeSync(0, JSON.stringify(resume, null, 2));
-
-
-
-
-    // JSON.parse(json);
-    // console.log(json)
-
-    // verify against schema
-    // this.log.debug('verifing against schema...');
-
-    // write output to file
-    // this.log.debug(`writing into file: "${filename}"...`);
-    // fs.writeFileSync(filename, resume);
+    return JSON.parse(resume);
   }
 }
 

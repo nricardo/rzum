@@ -48,32 +48,32 @@
     "LearnerInfo" : {
       "Identification" : {
         "PersonName" : {
-          "FirstName" : "{{basic.id.firstname}}",
-          "Surname" : "{{basic.id.lastname}}"
+          "FirstName" : "{basic.id.firstname}",
+          "Surname" : "{basic.id.lastname}"
         },
         "ContactInfo" : {
           "Address" : {
             "Contact" : {
-              "AddressLine" : "{{basic.address.street}}",
-              "PostalCode" : "{{basic.address.postal.code}}",
-              "Municipality" : "{{basic.address.postal.region}}",
+              "AddressLine" : "{basic.address.street}",
+              "PostalCode" : "{basic.address.postal.code}",
+              "Municipality" : "{basic.address.postal.region}",
               "Country" : {
-                "Code" : "{{basic.address.country.code}}",
-                "Label" : "{{basic.address.country.name}}"
+                "Code" : "{basic.address.country.code}",
+                "Label" : "{basic.address.country.name}"
               }
             }
           },
           "Email" : {
-            "Contact" : "{{basic.id.email}}"
+            "Contact" : "{basic.id.email}"
           },
           "Telephone" : [ {
-            "Contact" : "{{basic.id.phone}}",
+            "Contact" : "{basic.id.phone}",
             "Use" : {
               "Code" : "home",
               "Label" : "Home"
             }
           }, {
-            "Contact" : "{{basic.id.mobile}}",
+            "Contact" : "{basic.id.mobile}",
             "Use" : {
               "Code" : "mobile",
               "Label" : "Mobile"
@@ -89,18 +89,18 @@
         },
         "Demographics" : {
           "Birthdate" : {
-            "Year" : "{{basic.id.birthdate.year}}",
-            "Month" : "{{basic.id.birthdate.month}}",
-            "Day" : "{{basic.id.birthdate.day}}"
+            "Year" : "{basic.id.birthdate.year}",
+            "Month" : "{basic.id.birthdate.month}",
+            "Day" : "{basic.id.birthdate.day}"
           },
           "Gender" : {
-            "Code" : "{{basic.id.gender.code}}",
-            "Label" : "{{basic.id.gender.label}}"
+            "Code" : "{basic.id.gender.code}",
+            "Label" : "{basic.id.gender.label}"
           }
         },
         "Photo" : {
           "MimeType" : "image/jpeg",
-          "Data" : "{{basic.id.photo}}",
+          "Data" : "{basic.id.photo}",
           "Metadata" : [ {
             "Key" : "dimension",
             "Value" : ""
@@ -113,106 +113,45 @@
       "Headline" : {
         "Type" : {
           "Code" : "job_applied_for",
-          "Label" : "{{basic.headline.label}}"
+          "Label" : "{basic.headline.label}"
         },
         "Description" : {
-          "Label" : "{{basic.headline.description}}"
+          "Label" : "{basic.headline.description}"
         }
       },
-      "WorkExperience" : [ {
+      "WorkExperience" : [{#work}{
         "Period" : {
           "From" : {
-            "Year" : 2002,
-            "Month" : 8
-          },
-          "Current" : true
-        },
-        "Position" : {
-          "Label" : "Independent consultant"
-        },
-        "Activities" : "Evaluation of European Commission youth training support measures for youth national<br />agencies and young people",
-        "Employer" : {
-          "Name" : "British Council",
-          "ContactInfo" : {
-            "Address" : {
-              "Contact" : {
-                "AddressLine" : "123, Bd Ney",
-                "PostalCode" : "75023",
-                "Municipality" : "Paris",
-                "Country" : {
-                  "Code" : "FR",
-                  "Label" : "France"
-                }
-              }
-            }
-          }
-        }
-      }, {
-        "Period" : {
-          "From" : {
-            "Year" : 2002,
-            "Month" : 3
-          },
+            "Year" : {period.bgn.year},
+            "Month" : {period.bgn.month}
+          }{#period.end},
           "To" : {
-            "Year" : 2002,
-            "Month" : 7
-          },
-          "Current" : false
+            "Year" : {year},
+            "Month" : {month}
+          }{/period.end},
+          "Current" : {@eq key="period.end" value="null"}true{:else}false{/eq}
         },
         "Position" : {
-          "Label" : "Internship"
+          "Label" : "{position}"
         },
-        "Activities" : "- evaluating youth training programmes for SALTO UK and the partnership between the<br />Council of Europe and European Commission<br />- organizing and running a 2 day workshop on non-formal education for Action 5 large scale projects focusing on quality, assessment and recognition<br />- contributing to the steering sroup on training and developing action plans on training for<br />the next 3 years. Working on the Users Guide for training and the support measures",
+        "Activities" : "{summary|s}",
         "Employer" : {
-          "Name" : "European Commission, Youth Unit, DG Education and Culture",
+          "Name" : "{company}",
           "ContactInfo" : {
             "Address" : {
               "Contact" : {
-                "AddressLine" : "200, Rue de la Loi",
-                "PostalCode" : "1049",
-                "Municipality" : "Brussels",
+                "AddressLine" : "{address.street}",
+                "PostalCode" : "{address.postal.code}",
+                "Municipality" : "{address.postal.region}",
                 "Country" : {
-                  "Code" : "BE",
-                  "Label" : "Belgium"
-                }
-              }
-            }
-          },
-          "Sector" : {
-            "Label" : "European institution"
-          }
-        }
-      }, {
-        "Period" : {
-          "From" : {
-            "Year" : 2001,
-            "Month" : 10
-          },
-          "To" : {
-            "Year" : 2002,
-            "Month" : 2
-          },
-          "Current" : false
-        },
-        "Position" : {
-          "Label" : "Researcher / Independent Consultant"
-        },
-        "Activities" : "Working in a research team carrying out in-depth qualitative evaluation of the 2 year Advanced Training of Trainers in Europe using participant observations, in-depth interviews and focus groups. Work carried out in training courses in Strasbourg, Slovenia and Budapest.",
-        "Employer" : {
-          "Name" : "Council of Europe",
-          "ContactInfo" : {
-            "Address" : {
-              "Contact" : {
-                "Municipality" : "Budapest",
-                "Country" : {
-                  "Code" : "HU",
-                  "Label" : "Hungary"
+                  "Code" : "{address.country.code}",
+                  "Label" : "{address.country.name}"
                 }
               }
             }
           }
         }
-      } ],
+      }{@sep},{/sep}{/work}],
       "Education" : [ {
         "Period" : {
           "From" : {

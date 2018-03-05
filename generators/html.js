@@ -1,14 +1,14 @@
 'use strict';
 
 const fs = require('fs');
-const jsonT = require('jsont');
-
 const Logger = require('../logger');
+const Templr = require('../templr');
 
 class HTML {
 
   constructor () {
     this.log = new Logger(HTML.name);
+    this.tmplr = new Templr();
   }
 
   // generates an HTML résumé
@@ -17,12 +17,11 @@ class HTML {
 
     // read template
     this.log.debug('loading template...');
-    const template = require('../templates/resume.json');
+    const template = fs.readFileSync('templates/resume.dust', 'utf-8');
 
     // compile final JSON template
     this.log.debug('compiling template with data...');
-    const resume = jsonTemplates(template);
-    const json = resume(data);
+    this.tmplr.render(template, data);
 
     // verify against schema
     this.log.debug('verifing against schema...');

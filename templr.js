@@ -14,7 +14,6 @@ class Templr {
   render(template, data) {
     return new Promise((resolve, reject) => {
       DustJS.renderSource(template, data, (err, resume) => {
-        console.log(resume)
         if (err) reject(err);
         resolve(resume);
       });

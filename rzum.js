@@ -20,7 +20,7 @@ class Rzum {
       program
         .version(`${pkg.name} v${pkg.version}`)
         .option('-v, --verbose [level]', 'be verbose on logging', '1')
-        .command('generate <filename>').alias('g')
+        .command('generate').alias('g')
         .description('Generates résumé in different type of output formats.')
         .option('-f, --format <format>', `defines the format for the output:
             - html:     creates a single HTML5 page using the given theme;
@@ -30,7 +30,7 @@ class Rzum {
             `, /^(html|pdf|json|euro)$/i)
         .option('-t, --theme <theme>', 'specify résumé theme (except for Europass)', 'flat')
         .option('-o, --output <filename>', 'writes output to filename')
-        .action((filename, options) => {
+        .action(options => {
           log.info(':: Résumé generator from JSON data ::');
 
           // read input data
@@ -41,7 +41,9 @@ class Rzum {
           const generator = GeneratorFactory.getGenerator(options.format);
 
           // now generate with given json data
-          generator.generate(data, filename);
+          generator.generate(data);
+
+          // write to output stream
 
           log.info('All done! Enjoy your new résumé!!');
         });
@@ -51,7 +53,7 @@ class Rzum {
       if (!process.argv.slice(2).length) program.help();
 
     } catch (e) {
-      log.error(e.message);
+      console.error(e.message);
       program.help();
     }
 

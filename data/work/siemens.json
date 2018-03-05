@@ -6,14 +6,14 @@
     "bgn": { "year": 2005, "month": 1 },
     "end": { "year": 2008, "month": 9 }
   },
-  "summary": "<u><b>OCU / MTS</b> project</u><br>Analysis, design and development the embedded application (Linux OS) for the control and management of devices (ASICs/FPGAs) and optical modules (lasers) used in DWDM optical networks.<br>Test specification and integration between SW and HW.<br>Customer support in the optimization and correction of deployed systems on their networks.<br> Improvements of the production environment and code generation (Makefiles / Scripts).<br><u><b>INOV</b> project</u><br>Submission of an Invention Report (patent candidate) of a control algorithm for spectral power distribution used in optical DGE modules with the title 'Efficient Signal Equalization via Real Time Adaptation of Gaussian Filters'.",
+  "summary": "<u><b>OCU / MTS</b> project</u><br>Analysis, design and development the embedded application (Linux OS) for the control and management of devices (ASICs/FPGAs) and optical modules (lasers) used in DWDM optical networks.<br>Test specification and integration between SW and HW.<br>Customer support in the optimization and correction of deployed systems on their networks.<br> Improvements of the production environment and code generation (Makefiles / Scripts).<br><u><b>INOV</b> project</u><br>Submission of an Invention Report (patent candidate) of a control algorithm for spectral power distribution used in optical DGE modules with the title 'Efficient Signal Equalization via Real Time Adaptation of Gaussian Filters'.<br><b>Tech stack:</b><br><small><ul><li>C/C++</li><li>IBM Rational Rose (UML design and code generation)</li><li>IBM Rational ClearCase (Configuration Management)</li></ul></small>",
   "address": {
     "street": "Rua Irmãos Siemens, N1",
     "postal": {
-      "code": "",
-      "region": "Alfragide"
+      "code": "2720-093",
+      "region": "Amadora"
     },
-    "city": "Lisboa",
+    "city": "Alfragide",
     "country": {
       "code": "PT",
       "name": "Portugal"
