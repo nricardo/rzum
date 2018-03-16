@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+	<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimal-ui">
+
+    <title>{basic.id.name}</title>
+
+    <style>
+      [resume] {
+        border: 1px solid red;
+      }
+    </style>
+	</head>
+
+	<body resume>
+
+    <header>
+      HEADER
+    </header>
+
+    <main>
+      PARTIALS
+    </main>
+
+    <footer>
+      FOOTER
+    </footer>
+
+	</body>
+</html>

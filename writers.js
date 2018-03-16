@@ -3,17 +3,35 @@
 const fs = require('fs');
 const Logger = require('./logger');
 
-class Writers {
+const { Readable } = require('stream');
 
-  constructor() {
-    this.log = new Logger(Writers.name);
+class RzumStream extends Readable {
+  constructor(data, options) {
+    super(options);
+
+    this.data = data;
   }
 
-  write(fd) {
-    // write PDF to output file
-    this.log.debug(`writing into file: "${filename}"...`);
-    pdf.pipe(fs.createWriteStream(filename));
+  _read(size) {
+    const chunk = this.data.slice(0, size);
+    this.data = this.data.slice(size);
+    this.push(chunk);
   }
 }
 
-module.exports = Writers;
+class Writers {
+
+  constructor(filename) {
+    this.log = new Logger(Writers.name);
+    this.sink = filename ? fs.createWriteStream(filename) : process.stdout;
+  }
+
+  write(source) {
+    source.pipe(this.sink);
+  }
+}
+
+module.exports = {
+  Writers,
+  RzumStream,
+};

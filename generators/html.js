@@ -1,8 +1,11 @@
 'use strict';
 
 const fs = require('fs');
+const path = require('path');
 const Logger = require('../logger');
 const Templr = require('../templr');
+
+const { RzumStream } = require('../writers');
 
 class HTML {
 
@@ -17,22 +20,14 @@ class HTML {
 
     // read template
     this.log.debug('loading template...');
-    const template = fs.readFileSync('templates/resume.dust', 'utf-8');
+    const template = fs.readFileSync(path.resolve(__dirname, '../templates/html.dust'), 'utf-8');
 
-    // compile final JSON template
+    // compile final HTML template
     this.log.debug('compiling template with data...');
-    this.tmplr.render(template, data);
+    const html = await this.tmplr.render(template, data);
 
-    // verify against schema
-    this.log.debug('verifing against schema...');
-
-    // creating HTML page
-    this.log.debug('creating HTML page...');
-    const html = `<html></html>`; // await
-
-    // write PDF to output file
-    this.log.debug(`writing into file: "${filename}"...`);
-    fs.writeFileSync(filename, html);
+    // return as stream
+    return new RzumStream(html);
   }
 }
 
