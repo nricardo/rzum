@@ -141,7 +141,7 @@
           "Position": {
             "Label": "Senior Software Engineer / Web Developer"
           },
-          "Activities": "Nearshore project (fullstack)",
+          "Activities": "Nearshore project (fullstack)<br><b>Tech stack:</b><br><small>HTML5, CSS3, SASS/SCSS, React, DustJS, Twig.js, Grunt, Webpack, Babel, PostCSS, NodeJS, ExpressJS, Kraken-js, JQuery, GIT</small>",
           "Employer": {
             "Name": "CAP HPI",
             "Sector": {
@@ -164,7 +164,7 @@
           "Position": {
             "Label": "Senior Software Engineer / Web Developer"
           },
-          "Activities": "Design and implementation of a software solution for staff management and project planning (time allocation, skill management, ...).<br><b>Tech stack:</b><br><small>AngularJS, HTML5, CSS3, SASS/SCSS, Material Design, ES6, Webpack, GIT, NodeJS, ExpressJS, DSE Graph, Gremlin</small>",
+          "Activities": "Design and implementation of a software solution for staff management and project planning (time allocation, skill management, ...).<br><b>Tech stack:</b><br><small>AngularJS, HTML5, CSS3, SASS/SCSS, Material Design, D3.js, ES6, Webpack, GIT, NodeJS, ExpressJS, DSE Graph, Gremlin</small>",
           "Employer": {
             "Name": "BNP Paribas Portugal",
             "Sector": {
@@ -357,7 +357,7 @@
               "Year": 1997
             },
             "To": {
-              "Year": 2001
+              "Year": 2004
             },
             "Current": false
           },

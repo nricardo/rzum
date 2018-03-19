@@ -1,6 +1,7 @@
 'use strict';
 
 const fs = require('fs');
+const path = require('path');
 const Ajv = require('ajv');
 const axios = require('axios');
 const Logger = require('../logger');
@@ -37,27 +38,25 @@ class Europass {
 
     // read template
     this.log.debug('loading Europass template...');
-    const template = fs.readFileSync('templates/europass.dust', 'utf-8');
+    // const template = fs.readFileSync(path.resolve(__dirname, '../templates/europass.nricardo.dust'), 'utf-8');
+    const template = fs.readFileSync(path.resolve(__dirname, '../templates/europass.dust'), 'utf-8');
+    console.log(template)
 
     // compile final JSON template
     this.log.debug('rendering template with data...');
-    const resume = await this.tmplr.render(template, data);
+    const json = await this.tmplr.render(template, data);
 
     // verify against schema
     this.log.debug('validating against schema...');
-    const schema = fs.readFileSync('schemas/europass-schema.json');
-    // const valid = this.ajv.validate(schema, resume);
-    // if (!valid) throw new Error('generated JSON file is not valid... Please check data!');
+    const schema = fs.readFileSync(path.resolve(__dirname, '../schemas/europass-schema.json'));
+    const valid = this.ajv.validate(schema, json);
+    if (!valid) throw new Error('generated JSON file is not valid... Please check data!');
 
     // generate PDF
     this.log.debug('requesting PDF generation...');
-    const json = JSON.parse(resume);
-    // console.log(JSON.stringify(json, null, 2))
-    const pdf = await this.generatePDF(json);
+    const resume = await this.generatePDF(JSON.parse(json)); // NOTE: this is already a stream!
 
-    pdf.pipe(fs.createWriteStream('test.pdf'));
-
-    // return pdf;
+    return resume;
   }
 
 }

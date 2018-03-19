@@ -152,58 +152,21 @@
           }
         }
       }{@sep},{/sep}{/work}],
-      "Education" : [ {
+      "Education" : [{#degree}{
         "Period" : {
           "From" : {
-            "Year" : 1997
+            "Year" : {period.bgn.year}
           },
           "To" : {
-            "Year" : 2001
+            "Year" : {period.end.year}
           },
           "Current" : false
         },
-        "Title" : "PhD - Thesis Title: 'Young People in the Construction of the Virtual University’, Empirical research on e-learning",
+        "Title" : "{title}",
         "Organisation" : {
-          "Name" : "Brunel University",
-          "ContactInfo" : {
-            "Address" : {
-              "Contact" : {
-                "Municipality" : "London",
-                "Country" : {
-                  "Code" : "UK",
-                  "Label" : "United Kingdom"
-                }
-              }
-            }
-          }
+          "Name" : "{organisation}"
         }
-      }, {
-        "Period" : {
-          "From" : {
-            "Year" : 1993
-          },
-          "To" : {
-            "Year" : 1997
-          },
-          "Current" : false
-        },
-        "Title" : "Bachelor of Science in Sociology and Psychology",
-        "Activities" : "- sociology of risk<br />- sociology of scientific knowledge / information society<br />- anthropology<br />E-learning and Psychology<br />- research methods",
-        "Organisation" : {
-          "Name" : "Brunel University",
-          "ContactInfo" : {
-            "Address" : {
-              "Contact" : {
-                "Municipality" : "London",
-                "Country" : {
-                  "Code" : "UK",
-                  "Label" : "United Kingdom"
-                }
-              }
-            }
-          }
-        }
-      } ],
+      }{@sep},{/sep}{/degree}],
       "Skills" : {
         "Linguistic" : {
           "MotherTongue" : [ {
