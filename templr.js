@@ -1,6 +1,7 @@
 'use strict';
 
 const fs = require('fs');
+const moment = require('moment');
 const DustJS = require('dustjs-helpers');
 const Logger = require('./logger');
 
@@ -21,24 +22,24 @@ class Templr {
   }
 
   extend() {
-    // //Create a helper called 'formatDate'
-    // dust.helpers.formatDate = function (chunk, context, bodies, params) {
+    // create a helper called 'rzumDate'
+    DustJS.helpers.rzumDate = function (chunk, context, bodies, params) {
 
-    //   //Retrieve the date value from the template parameters.
-    //   var date = dust.helpers.tap(params.date, chunk, context);
+      // retrieve the date value from the template parameters.
+      const date = DustJS.helpers.tap(params.date, chunk, context);
 
-    //   //Retrieve the format string from the template parameters.
-    //   var format = dust.helpers.tap(params.format, chunk, context);
+      // retrieve the format string from the template parameters.
+      const format = DustJS.helpers.tap(params.format, chunk, context);
 
-    //   //Parse the date object using MomentJS
-    //   var m = moment(new Date(date));
+      // parse the date object using MomentJS
+      const m = date ? moment(`${date.year}-${date.month}`, 'YYYY-MM') : moment();
 
-    //   //Format the string
-    //   var output = m.format(format);
+      // format the string
+      const output = m.format(format);
 
-    //   //Write the final value out to the template
-    //   return chunk.write(output);
-    // };
+      // write the final value out to the template
+      return chunk.write(output);
+    };
   }
 }
 

@@ -4,19 +4,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, minimal-ui">
 
-    <title>{basic.id.name}</title>
+    <title>{basic.id.firstname} {basic.id.lastname}</title>
 
     <style>
-      [resume] {
-        border: 1px solid red;
-      }
+      {styles}
     </style>
 	</head>
 
 	<body resume>
 
     <header>
-      HEADER
+
     </header>
 
     <main>

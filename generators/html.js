@@ -15,16 +15,17 @@ class HTML {
   }
 
   // generates an HTML résumé
-  async generate(data, filename) {
+  async generate(data) {
     this.log.info('generating HTML résumé...');
 
     // read template
     this.log.debug('loading template...');
+    const styles = fs.readFileSync(path.resolve(__dirname, '../templates/resume.css'), 'utf-8');
     const template = fs.readFileSync(path.resolve(__dirname, '../templates/html.dust'), 'utf-8');
 
     // compile final HTML template
     this.log.debug('compiling template with data...');
-    const html = await this.tmplr.render(template, data);
+    const html = await this.tmplr.render(template, Object.assign({}, data, styles));
 
     // return as stream
     return new RzumStream(html);
