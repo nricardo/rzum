@@ -6,15 +6,13 @@
 
     <title>{basic.id.firstname} {basic.id.lastname}</title>
 
-    <style>
-      {styles}
-    </style>
+    <style>{_.styles}</style>
 	</head>
 
 	<body resume>
 
     <header>
-
+      HEADER
     </header>
 
     <main>
@@ -25,5 +23,6 @@
       FOOTER
     </footer>
 
+    <script>{_.script}</script>
 	</body>
 </html>

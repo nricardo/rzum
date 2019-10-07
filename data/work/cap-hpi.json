@@ -4,9 +4,14 @@
   "position": "Senior Sofware Engineer | Fullstack Developer",
   "period": {
     "bgn": { "year": 2018, "month": 1 },
-    "end": null
+    "end": { "year": 2018, "month": 4 }
   },
-  "summary": "Nearshore project (fullstack)",
+  "summary": "Improve and implement new features on CAP-HPI's car evaluation sites (https://hpivaluations.com/).<br />[Nearshore project (fullstack)]",
+  "stack": [
+    "HTML5", "CSS3", "SASS/SCSS", "React", "DustJS", "Twig.js",
+    "Grunt", "Webpack", "Babel", "PostCSS", "NodeJS", "ExpressJS",
+    "Kraken-js", "JQuery", "GIT"
+  ],
   "address": {
     "street": "Av. Duque de Ávila, 46",
     "postal": {

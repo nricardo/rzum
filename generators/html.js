@@ -20,12 +20,14 @@ class HTML {
 
     // read template
     this.log.debug('loading template...');
+    const script = fs.readFileSync(path.resolve(__dirname, '../templates/resume.js'), 'utf-8');
     const styles = fs.readFileSync(path.resolve(__dirname, '../templates/resume.css'), 'utf-8');
     const template = fs.readFileSync(path.resolve(__dirname, '../templates/html.dust'), 'utf-8');
+    data = Object.assign({}, data, {_: {script, styles}});
 
     // compile final HTML template
     this.log.debug('compiling template with data...');
-    const html = await this.tmplr.render(template, Object.assign({}, data, styles));
+    let html = await this.tmplr.render(template, data);
 
     // return as stream
     return new RzumStream(html);

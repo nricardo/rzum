@@ -1,0 +1,28 @@
+{
+  "company": "Truphone️",
+  "website": "https://www.truphone.com/",
+  "position": "Senior Sofware Engineer | Fullstack Developer",
+  "period": {
+    "bgn": { "year": 2018, "month": 4 },
+    "end": null
+  },
+  "summary": "<b>My Truphone App</b>App development for purchasing global data plans and installing them on eSIM capable devices (iOS and Android).<br />Continuos work on moving towards a microservices architecture.",
+  "stack": [
+    "React", "React Native", "Redux", "Redux Saga",
+    "NodeJS", "Loopback", "ExpressJS", "Docker", "Git",
+    "Xcode", "Android Studio", "Graylog", "AWS"
+  ],
+  "address": {
+    "street": "Taguspark, Avenida Professor Doutor Cavaco Silva, Edifício Qualidade B2 3º",
+    "postal": {
+      "code": "2740-120",
+      "region": "Porto Salvo"
+    },
+    "city": "Oeiras",
+    "country": {
+      "code": "PT",
+      "name": "Portugal"
+    }
+  },
+  "sector": "Telecommunications"
+}

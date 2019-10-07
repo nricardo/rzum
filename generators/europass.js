@@ -7,6 +7,8 @@ const axios = require('axios');
 const Logger = require('../logger');
 const Templr = require('../templr');
 
+const { RzumStream } = require('../writers');
+
 // -- EUROPASS API --
 const API = {
   URL: 'https://europass.cedefop.europa.eu/rest/v1',
@@ -33,14 +35,13 @@ class Europass {
   }
 
   // generates Europass CV
-  async generate(data, filename) {
+  async generate(data) {
     this.log.info('generating Europass résumé...');
 
     // read template
     this.log.debug('loading Europass template...');
-    // const template = fs.readFileSync(path.resolve(__dirname, '../templates/europass.nricardo.dust'), 'utf-8');
     const template = fs.readFileSync(path.resolve(__dirname, '../templates/europass.dust'), 'utf-8');
-    console.log(template)
+    // const template = fs.readFileSync(path.resolve(__dirname, '../templates/europass.nricardo.dust'), 'utf-8');
 
     // compile final JSON template
     this.log.debug('rendering template with data...');

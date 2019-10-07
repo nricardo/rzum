@@ -19,27 +19,15 @@
         "name" : "LearnerInfo.Identification.Demographics.Birthdate",
         "show" : true,
         "format" : "numeric/long"
-      }, {
-        "name" : "LearnerInfo.WorkExperience[0].Period",
+      }{#work}, {
+        "name" : "LearnerInfo.WorkExperience[$idx].Period",
+        "show" : true,
+        "format" : "text/long"
+      }{/work}{#degree}, {
+        "name" : "LearnerInfo.Education[$idx].Period",
         "show" : true,
         "format" : "numeric/long"
-      }, {
-        "name" : "LearnerInfo.WorkExperience[1].Period",
-        "show" : true,
-        "format" : "numeric/long"
-      }, {
-        "name" : "LearnerInfo.WorkExperience[2].Period",
-        "show" : true,
-        "format" : "numeric/long"
-      }, {
-        "name" : "LearnerInfo.Education[0].Period",
-        "show" : true,
-        "format" : "numeric/long"
-      }, {
-        "name" : "LearnerInfo.Education[1].Period",
-        "show" : true,
-        "format" : "numeric/long"
-      }, {
+      }{/degree}, {
         "name" : "LearnerInfo",
         "show" : true,
         "order" : "Identification Headline WorkExperience Education Skills Achievement ReferenceTo"
@@ -134,7 +122,7 @@
         "Position" : {
           "Label" : "{position}"
         },
-        "Activities" : "{summary|s}",
+        "Activities" : "{summary|s}<br><small><b>Stack:</b> {#stack}{.}{@sep}, {/sep}{/stack}</small>",
         "Employer" : {
           "Name" : "{company}",
           "ContactInfo" : {
@@ -149,10 +137,25 @@
                 }
               }
             }
+          },
+          "Sector": {
+            "Label": "{sector}"
           }
         }
       }{@sep},{/sep}{/work}],
-      "Education" : [{#degree}{
+      "Education" : [{#courses}{
+        "Period" : {
+          "From" : {
+            "Year" : {date.year},
+            "Month" : {date.month}
+          },
+          "Current" : false
+        },
+        "Title" : "{title}",
+        "Organisation" : {
+          "Name" : "{organisation}"
+        }
+      }{@sep},{/sep}{/courses},{#degree}{
         "Period" : {
           "From" : {
             "Year" : {period.bgn.year}
@@ -163,6 +166,7 @@
           "Current" : false
         },
         "Title" : "{title}",
+        "Activities": "{course}",
         "Organisation" : {
           "Name" : "{organisation}"
         }
@@ -171,65 +175,27 @@
         "Linguistic" : {
           "MotherTongue" : [ {
             "Description" : {
-              "Code" : "en",
-              "Label" : "English"
+              "Code" : "pt-PT",
+              "Label" : "Portuguese"
             }
           } ],
           "ForeignLanguage" : [ {
             "Description" : {
-              "Code" : "fr",
-              "Label" : "French"
+              "Code" : "en",
+              "Label" : "English"
             },
             "ProficiencyLevel" : {
-              "Listening" : "C1",
+              "Listening" : "C2",
               "Reading" : "C2",
-              "SpokenInteraction" : "B2",
-              "SpokenProduction" : "C1",
+              "SpokenInteraction" : "C2",
+              "SpokenProduction" : "C2",
               "Writing" : "C2"
             },
-            "Certificate" : [ {
-              "Title" : "Dalf C1"
-            } ]
-          }, {
-            "Description" : {
-              "Code" : "de",
-              "Label" : "German"
-            },
-            "ProficiencyLevel" : {
-              "Listening" : "A2",
-              "Reading" : "A2",
-              "SpokenInteraction" : "A2",
-              "SpokenProduction" : "A2",
-              "Writing" : "A2"
-            },
-            "Certificate" : [ {
-              "Title" : "Zertifikat (A2)"
-            } ]
+            "Certificate" : []
           } ]
-        },
-        "Communication" : {
-          "Description" : "- team work: I have worked in various types of teams from research teams to national league hockey. For 2 years I coached my university hockey team<br />- mediating skills: I work on the borders between young people, youth trainers, youth policy and researchers, for example running a 3 day workshop at CoE Symposium ‘Youth Actor of Social Change’, and my continued work on youth training programmes<br />- intercultural skills: I am experienced at working in a European dimension such as being a rapporteur at the CoE Budapest ‘youth against violence seminar’ and working with refugees."
-        },
-        "Organisational" : {
-          "Description" : "- whilst working for a Brussels based refugee NGO ‘Convivial’ I organized a ‘Civil Dialogue’<br />between refugees and civil servants at the European Commission 20th June 2002<br />- during my PhD I organised a seminar series on research methods"
-        },
-        "Computer" : {
-          "Description" : "- competent with most Microsoft Office programmes<br />- experience with HTML"
-        },
-        "Driving" : {
-          "Description" : [ "A", "B" ]
-        },
-        "Other" : {
-          "Description" : "Creating pieces of Art and visiting Modern Art galleries. Enjoy all sports particularly hockey, football and running. Love to travel and experience different cultures."
         }
       },
-      "Achievement" : [ {
-        "Title" : {
-          "Code" : "publications",
-          "Label" : "Publications"
-        },
-        "Description" : "‘How to do Observations: Borrowing techniques from the Social Sciences to help Participants do Observations in Simulation Exercises’ Coyote EU/CoE Partnership Publication, (2002)."
-      } ]
+      "Achievement" : []
     }
   }
 }

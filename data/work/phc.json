@@ -6,8 +6,10 @@
     "bgn": { "year": 2014, "month": 9 },
     "end": { "year": 2016, "month": 8 }
   },
-  "summary": "<u><b><a href='https://www.drivefx.net' target='_blank'>Drive FX</a></b></u><br>Implementation from the ground-up of the new platform / framework the FX project composed by Billing (invoicing), Business (management) and the POS components.<br><b>Tech stack:</b><br><small>AngularJS, HTML5, CSS3, SASS/SCSS, Bootstrap, ES6, TypeScript, Grunt, Git, VB.NET, Visual Studio 2012</small>",
-  "highlights": [
+  "summary": "<u><b><a href='https://www.drivefx.net' target='_blank'>Drive FX</a></b></u><br>Implementation from the ground-up of the new platform / framework the FX project composed by Billing (invoicing), Business (management) and the POS components.",
+  "stack": [
+    "AngularJS", "HTML5", "CSS3", "SASS/SCSS", "Bootstrap", "ES6", "TypeScript",
+    "Grunt", "Git", "VB.NET", "Visual Studio 2012"
   ],
   "address": {
     "street": "Lagoas Park, Edifício 3 Piso 2",

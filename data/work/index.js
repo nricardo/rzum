@@ -1,4 +1,5 @@
 module.exports = [
+  require('./truphone'),
   require('./cap-hpi'),
   require('./bnp'),
   require('./mcd'),
