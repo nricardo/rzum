@@ -14,7 +14,7 @@
     "dotenv": "^5.0.1",
     "dustjs-helpers": "^1.7.4",
     "dustjs-linkedin": "^2.7.5",
-    "googleapis": "^28.0.1",
+    "googleapis": "^39.1.0",
     "moment": "^2.22.0"
   },
   "devDependencies": {
