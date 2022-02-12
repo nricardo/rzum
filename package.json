@@ -7,7 +7,7 @@
   "bin": "./rzum.js",
   "preferGlobal": true,
   "dependencies": {
-    "ajv": "^6.2.1",
+    "ajv": "^6.12.3",
     "axios": "^0.19.0",
     "commander": "^2.13.0",
     "debug": "^3.1.0",
