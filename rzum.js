@@ -8,6 +8,7 @@ const { Writers } = require('./writers');
 
 // import our generators
 const GeneratorFactory = require('./generators');
+const JSONResume = require('./schemas/json-resume');
 
 // ------------------------------------------------------------------------
 
@@ -26,10 +27,10 @@ class Rzum {
       .command('generate').alias('g')
       .description('Generates résumé in different type of output formats.')
       .option('-f, --format <format>', `defines the format for the output:
-            - html:     creates a single HTML5 page using the given theme;
-            - pdf:      output will be a PDF print version of the HTML format;
-            - json:     produces a JSON file compatible with JSONResume schema (https://jsonresume.org/schema/);
-            - euro: generates a Europass CV in PDF+XML schema (http://interop.europass.cedefop.europa.eu/);
+            - html:  creates a single HTML5 page using the given theme;
+            - pdf:   output will be a PDF print version of the HTML format;
+            - json:  produces a JSON file compatible with JSONResume schema (https://jsonresume.org/schema/);
+            - euro:  generates a Europass CV in PDF+XML schema (http://interop.europass.cedefop.europa.eu/);
             `, /^(html|pdf|json|euro)$/i)
       .option('-t, --theme <theme>', 'specify résumé theme (except for Europass)', 'flat')
       .option('-o, --output <filename>', 'writes output to filename')
@@ -55,17 +56,19 @@ class Rzum {
       // get a generator for the needed format
       const generator = GeneratorFactory.getGenerator(format);
 
+      // validade data against JSON Resume schema
+      const jsonResume = new JSONResume();
+      await jsonResume.validate(data);
+
       // now generate with given json data
-      const resume = await generator.generate(data, theme);
+      const resume = await generator.generate(data);
 
       // write to output stream
-      this.log.debug(`writing into file: "${filename}"...`);
       output.write(resume);
 
       this.log.info('All done! Enjoy your new résumé!!');
     } catch (e) {
-      console.error(e.message);
-      program.help();
+      this.log.error(e);
     }
   }
 }

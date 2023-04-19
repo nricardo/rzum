@@ -1,27 +1,12 @@
 {
-  "company": "Wincor Nixdorf Portugal",
-  "website": null,
+  "name": "Wincor Nixdorf Portugal",
+  "url": "https://www.dieboldnixdorf.com/en-us",
   "position": "Software Engineer",
-  "period": {
-    "bgn": { "year": 2008, "month": 10 },
-    "end": { "year": 2010, "month": 3 }
-  },
+  "startDate": "2008-10-01",
+  "endDate": "2010-03-01",
   "summary": "<u><b>TPLinux</b> project</u><br>Development of new features and maintenance of the POS as well as the back-office applications.<br><u><b>Proview</b> project</u><br>PoC (Prof of Concept) and Roll-Out of the monitoring of ATM's agent.<br>Manage incidents / problems in the customer's ATM network with WN. Establishing correlations and filters for early identification of anomalies in HW. Design and integration with external tools (SIBS / EMIS).",
-  "stack": [
+  "highlights": [
     "C", "C++", "Java", "HTML5", "CSS3",
     "PHP", "Wordpress", "MySQL", "Apache Web Server (LAMP)"
-  ],
-  "address": {
-    "street": "R. de Nossa Sra. da Conceição 5",
-    "postal": {
-      "code": "2790-488",
-      "region": "Carnaxide"
-    },
-    "city": "Oeiras",
-    "country": {
-      "code": "PT",
-      "name": "Portugal"
-    }
-  },
-  "sector": "Banking and Retail Solutions"
+  ]
 }

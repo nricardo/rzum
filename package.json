@@ -2,22 +2,25 @@
   "name": "rzum",
   "version": "0.1.0",
   "main": "index.js",
-  "author": "nricardo <nelson.s.ricardo@gmail.com>",
+  "author": "Nelson Ricardo",
   "license": "MIT",
   "bin": "./rzum.js",
   "preferGlobal": true,
+  "scripts": {
+    "json": "./rzum.js generate -f json -o build/resume.json",
+    "html": "./rzum.js generate -f html -o build/resume.html"
+  },
   "dependencies": {
-    "ajv": "^6.2.1",
-    "axios": "^0.19.0",
-    "commander": "^2.13.0",
-    "debug": "^3.1.0",
-    "dotenv": "^5.0.1",
-    "dustjs-helpers": "^1.7.4",
-    "dustjs-linkedin": "^2.7.5",
-    "googleapis": "^28.0.1",
-    "moment": "^2.22.0"
+    "ajv": "^8.11.0",
+    "commander": "^9.4.0",
+    "debug": "^4.3.4",
+    "handlebars": "^4.7.7",
+    "marked": "^4.1.0",
+    "moment": "^2.29.4",
+    "qrcode": "^1.5.1",
+    "resume-schema": "^1.0.0"
   },
   "devDependencies": {
-    "supports-color": "^5.2.0"
+    "resume-cli": "^3.0.7"
   }
 }

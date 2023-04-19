@@ -1,10 +1,10 @@
 module.exports = [
-  require('./truphone'),
-  require('./cap-hpi'),
-  require('./bnp'),
-  require('./mcd'),
-  require('./phc'),
-  require('./coriant'),
-  require('./wincor'),
-  require('./siemens'),
+  require('./truphone.json'),
+  require('./cap-hpi.json'),
+  require('./bnp.json'),
+  require('./mcd.json'),
+  require('./phc.json'),
+  require('./coriant.json'),
+  require('./wincor.json'),
+  require('./siemens.json'),
 ];

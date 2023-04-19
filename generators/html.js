@@ -1,7 +1,7 @@
 'use strict';
-
 const fs = require('fs');
 const path = require('path');
+
 const Logger = require('../logger');
 const Templr = require('../templr');
 
@@ -20,10 +20,9 @@ class HTML {
 
     // read template
     this.log.debug('loading template...');
-    const script = fs.readFileSync(path.resolve(__dirname, '../templates/resume.js'), 'utf-8');
-    const styles = fs.readFileSync(path.resolve(__dirname, '../templates/resume.css'), 'utf-8');
-    const template = fs.readFileSync(path.resolve(__dirname, '../templates/html.dust'), 'utf-8');
-    data = Object.assign({}, data, {_: {script, styles}});
+    const styles = fs.readFileSync(path.resolve(__dirname, '../templates/cv.css'), 'utf-8');
+    const template = fs.readFileSync(path.resolve(__dirname, '../templates/html.hbs'), 'utf-8');
+    data = Object.assign({}, data, {_: {styles}});
 
     // compile final HTML template
     this.log.debug('compiling template with data...');

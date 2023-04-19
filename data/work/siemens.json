@@ -1,28 +1,13 @@
 {
-  "company": "Siemens / Nokia Siemens Networks",
-  "website": "https://www.siemens.com/global/en/home.html",
+  "name": "Siemens / Nokia Siemens Networks",
+  "url": "https://www.siemens.com/global/en/home.html",
   "position": "Software Engineer",
-  "period": {
-    "bgn": { "year": 2005, "month": 1 },
-    "end": { "year": 2008, "month": 9 }
-  },
+  "startDate": "2005-01-01",
+  "endDate": "2008-09-01",
   "summary": "<u><b>OCU / MTS</b> project</u><br>Analysis, design and development the embedded application (Linux OS) for the control and management of devices (ASICs/FPGAs) and optical modules (lasers) used in DWDM optical networks.<br>Test specification and integration between SW and HW.<br>Customer support in the optimization and correction of deployed systems on their networks.<br> Improvements of the production environment and code generation (Makefiles / Scripts).<br><u><b>INOV</b> project</u><br>Submission of an Invention Report (patent candidate) of a control algorithm for spectral power distribution used in optical DGE modules with the title 'Efficient Signal Equalization via Real Time Adaptation of Gaussian Filters'.",
-  "stack": [
+  "highlights": [
     "C/C++",
     "IBM Rational Rose (UML design and code generation)",
     "IBM Rational ClearCase (Configuration Management)"
-  ],
-  "address": {
-    "street": "Rua Irmãos Siemens, N1",
-    "postal": {
-      "code": "2720-093",
-      "region": "Amadora"
-    },
-    "city": "Alfragide",
-    "country": {
-      "code": "PT",
-      "name": "Portugal"
-    }
-  },
-  "sector": "Telecommunications"
+  ]
 }

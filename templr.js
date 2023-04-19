@@ -1,45 +1,96 @@
 'use strict';
-
 const fs = require('fs');
+const QRCode = require('qrcode');
 const moment = require('moment');
-const DustJS = require('dustjs-helpers');
+const { marked } = require('marked');
+const Handlebars = require('handlebars');
+
 const Logger = require('./logger');
+const Mapper = require('./helpers/mapper.json');
 
 class Templr {
 
   constructor() {
     this.log = new Logger(Templr.name);
-    this.extend();
+    this.setupHelpers();
   }
 
   render(template, data) {
-    return new Promise((resolve, reject) => {
-      DustJS.renderSource(template, data, (err, resume) => {
-        if (err) reject(err);
-        resolve(resume);
-      });
-    });
+    this.log.debug('compiling template...');
+    const tpl = Handlebars.compile(template);
+    this.log.debug('rendering with data...');
+    return tpl(data);
   }
 
-  extend() {
-    // create a helper called 'rzumDate'
-    DustJS.helpers.rzumDate = function (chunk, context, bodies, params) {
+  setupHelpers() {
+    Handlebars.registerHelper("md", (markdown = '') => {
+      const html = marked.parse(markdown);
+      return new Handlebars.SafeString(html);
+    });
 
-      // retrieve the date value from the template parameters.
-      const date = DustJS.helpers.tap(params.date, chunk, context);
+    Handlebars.registerHelper("lowercase", (text = '') => {
+      return new Handlebars.SafeString(text.toLowerCase());
+    });
 
-      // retrieve the format string from the template parameters.
-      const format = DustJS.helpers.tap(params.format, chunk, context);
+    Handlebars.registerHelper("date", (date = '1970-01-01') => {
+      return moment(date).format('MMM YYYY');
+    });
 
-      // parse the date object using MomentJS
-      const m = date ? moment(`${date.year}-${date.month}`, 'YYYY-MM') : moment();
+    Handlebars.registerHelper("names", (text = '') => {
+      var names = [];
+      const [first, last] = text.split(" ");
+      names.push(`<span class="firstName">${Handlebars.escapeExpression(first)}</span>`);
+      names.push(`<span class="lastName">${Handlebars.escapeExpression(last)}</span>`);
+      return new Handlebars.SafeString(names.join(' '));
+    });
 
-      // format the string
-      const output = m.format(format);
+    Handlebars.registerHelper('levels', (level, options) => {
+      let skills = '';
+      for (let i = 1; i <= 5; ++i) skills += options.fn(i <= level ? 'active' : '');
+      return skills;
+    });
 
-      // write the final value out to the template
-      return chunk.write(output);
-    };
+    Handlebars.registerHelper('skills', (skills, options) => {
+      const mapper = {};
+      Object.entries(Mapper.skills).forEach(([k, v = []]) => {
+        v.forEach(s => { mapper[s] = k; });
+      });
+
+      const sks = {};
+      skills.forEach(sk => {
+        if (mapper[sk.name] === undefined) return;
+        const grp = mapper[sk.name];
+        let values = sks[grp] || '';
+        values += options.fn(sk);
+        sks[grp] = values;
+      });
+
+      let ret = '';
+      Object.entries(sks).forEach(([key, val]) => ret += `<div class="skill-group"><h5>${key}</h5> ${val}</div>`);
+
+      return ret;
+    });
+
+    Handlebars.registerHelper("tiny", (url = '', ...params) => {
+      const [options, ...args] = params.reverse();
+      const [numPaths = 1] = args;
+      const [host, ...paths] = url.replace(/(http|https):\/\//i, '').split('/');
+      return new Handlebars.SafeString([host, ...paths.slice(0, numPaths)].join('/'));
+    });
+
+    Handlebars.registerHelper("qrcode", (url = '') => {
+      return QRCode.toString(url, {
+        type: 'svg',
+        margin: 0,
+        color: {
+          light: '#00000000',
+          dark: '#ff0000',
+        },
+      }, (err, svg) => {
+        if (err) throw new Error('Failed to render QR code: ' + err);
+        return new Handlebars.SafeString(svg);
+      });
+    });
   }
 }
 

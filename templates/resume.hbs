@@ -1,0 +1,82 @@
+{
+  "basics": {
+    "name": "{{basics.name}}",
+    "label": "{{basics.label}}",
+    "image": "{{{basics.image}}}",
+    "email": "{{basics.email}}",
+    "phone": "{{basics.phone}}",
+    "url": "{{basics.url}}",
+    "summary": "{{{basics.summary}}}",
+    "location": {
+      "address": "{{basics.location.address}}",
+      "postalCode": "{{basics.location.postalCode}}",
+      "city": "{{basics.location.city}}",
+      "countryCode": "{{basics.location.countryCode}}",
+      "region": "{{basics.location.region}}"
+    },
+    "profiles": [
+      {{#each basics.profiles}}
+      {
+        "network": "{{network}}",
+        "username": "{{username}}",
+        "url": "{{url}}"
+      }{{#unless @last}},{{/unless}}
+      {{/each}}
+    ]
+  },
+  "work": [
+    {{#each work}}
+    {
+      "name": "{{name}}",
+      "position": "{{position}}",
+      "url": "{{url}}",
+      "startDate": "{{startDate}}",
+      "endDate": "{{endDate}}",
+      "summary": "{{{summary}}}",
+      "highlights": [
+        {{#each highlights}}
+        "{{this}}"{{#unless @last}}, {{/unless}}
+        {{/each}}
+      ]
+    }{{#unless @last}}, {{/unless}}
+    {{/each}}
+  ],
+  "volunteer": [],
+  "education": [
+    {{#each education}}
+    {
+      "institution": "{{institution}}",
+      "url": "{{url}}",
+      "area": "{{area}}",
+      "studyType": "{{studyType}}",
+      "startDate": "{{startDate}}",
+      "endDate": "{{endDate}}"
+    }{{#unless @last}}, {{/unless}}
+    {{/each}}
+  ],
+  "awards": [],
+  "publications": [],
+  "skills": [
+    {{#each skills}}
+    {
+      "name": "{{name}}",
+      "level": "{{level}}",
+      "keywords": [
+        {{#each keywords}}
+        "{{this}}"{{#unless @last}}, {{/unless}}
+        {{/each}}
+      ]
+    }{{#unless @last}}, {{/unless}}
+    {{/each}}
+  ],
+  "languages": [
+    {{#each languages}}
+    {
+      "language": "{{language}}",
+      "fluency": "{{fluency}}"
+    }{{#unless @last}}, {{/unless}}
+    {{/each}}
+  ],
+  "interests": [],
+  "references": []
+}

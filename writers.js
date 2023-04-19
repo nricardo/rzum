@@ -22,11 +22,13 @@ class RzumStream extends Readable {
 class Writers {
 
   constructor(filename) {
+    this.filename = filename;
     this.log = new Logger(Writers.name);
     this.sink = filename ? fs.createWriteStream(filename) : process.stdout;
   }
 
   write(source) {
+    this.log.debug(`writing to "${this.filename ? this.filename : 'stdout'}"`);
     source.pipe(this.sink);
   }
 }

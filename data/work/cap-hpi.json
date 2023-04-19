@@ -1,28 +1,13 @@
 {
-  "company": "CAP-HPI",
-  "website": "https://www.cap-hpi.com/",
-  "position": "Senior Sofware Engineer | Fullstack Developer",
-  "period": {
-    "bgn": { "year": 2018, "month": 1 },
-    "end": { "year": 2018, "month": 4 }
-  },
-  "summary": "Improve and implement new features on CAP-HPI's car evaluation sites (https://hpivaluations.com/).<br />[Nearshore project (fullstack)]",
-  "stack": [
+  "name": "CAP-HPI",
+  "url": "https://www.cap-hpi.com",
+  "position": "Senior Software Engineer | Fullstack Developer",
+  "startDate": "2018-01-01",
+  "endDate": "2018-04-01",
+  "summary": "Improve and implement new features on [CAP-HPI's car evaluation sites](https://hpivaluations.com/).<br>[Nearshore project (fullstack)]",
+  "highlights": [
     "HTML5", "CSS3", "SASS/SCSS", "React", "DustJS", "Twig.js",
     "Grunt", "Webpack", "Babel", "PostCSS", "NodeJS", "ExpressJS",
     "Kraken-js", "JQuery", "GIT"
-  ],
-  "address": {
-    "street": "Av. Duque de Ávila, 46",
-    "postal": {
-      "code": "1050-083",
-      "region": "Lisboa"
-    },
-    "city": "Lisboa",
-    "country": {
-      "code": "PT",
-      "name": "Portugal"
-    }
-  },
-  "sector": "Automotive Industry"
+  ]
 }

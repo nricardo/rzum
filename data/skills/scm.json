@@ -1,17 +1,17 @@
-{
-  "section": "Software Configuration Management",
-  "skills": [
-    {
-      "name": "GIT",
-      "level": 0
-    },
-    {
-      "name": "SVN",
-      "level": 0
-    },
-    {
-      "name": "IBM Rational ClearCase",
-      "level": 0
-    }
-  ]
-}
+[
+  {
+    "name": "GIT",
+    "level": "4",
+    "keywords": []
+  },
+  {
+    "name": "SVN",
+    "level": "4",
+    "keywords": []
+  },
+  {
+    "name": "IBM Rational ClearCase",
+    "level": "4",
+    "keywords": []
+  }
+]

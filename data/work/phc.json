@@ -1,27 +1,12 @@
 {
-  "company": "PHC",
-  "website": "http://www.phcsoftware.com/",
-  "position": "Sofware Engineer / Web Developer",
-  "period": {
-    "bgn": { "year": 2014, "month": 9 },
-    "end": { "year": 2016, "month": 8 }
-  },
+  "name": "PHC",
+  "url": "http://www.phcsoftware.com",
+  "position": "Software Engineer / Web Developer",
+  "startDate": "2014-09-01",
+  "endDate": "2016-08-01",
   "summary": "<u><b><a href='https://www.drivefx.net' target='_blank'>Drive FX</a></b></u><br>Implementation from the ground-up of the new platform / framework the FX project composed by Billing (invoicing), Business (management) and the POS components.",
-  "stack": [
+  "highlights": [
     "AngularJS", "HTML5", "CSS3", "SASS/SCSS", "Bootstrap", "ES6", "TypeScript",
     "Grunt", "Git", "VB.NET", "Visual Studio 2012"
-  ],
-  "address": {
-    "street": "Lagoas Park, Edifício 3 Piso 2",
-    "postal": {
-      "code": "2740-266",
-      "region": "Porto Salvo"
-    },
-    "city": "Oeiras",
-    "country": {
-      "code": "PT",
-      "name": "Portugal"
-    }
-  },
-  "sector": "Billing / Business Management Software"
+  ]
 }

@@ -1,28 +1,13 @@
 {
-  "company": "Media Capital Digital / TVI",
-  "website": "http://www.tvi.iol.pt/",
-  "position": "Senior Sofware Engineer / Web Developer",
-  "period": {
-    "bgn": { "year": 2016, "month": 9 },
-    "end": { "year": 2017, "month": 6 }
-  },
+  "name": "Media Capital Digital / TVI",
+  "url": "http://www.tvi.iol.pt",
+  "position": "Senior Software Engineer / Web Developer",
+  "startDate": "2016-09-01",
+  "endDate": "2017-06-01",
   "summary": "Improvements on the backend services/dababases and the BackOffice (BO) frontend components.<br> Build of a statistical/monitoring system and report generation for the overhall and day-to-day BO operations.<br>Implementation of a new frontend solution for creating clips from HLS (Live) streams.<br>Design and integration of the SSO authentication system, using Oauth2.",
-  "stack": [
+  "highlights": [
     "AngularJS", "HTML5", "CSS3", "SASS/SCSS", "Bootstrap", "ES6", "Webpack",
     "SVN", "NodeJS", "Java", "Java Spring Framework",
     "MySQL", "MongoDB", "ElasticSearch"
-  ],
-  "address": {
-    "street": "Rua Mário Castelhano, 40, Queluz de Baixo",
-    "postal": {
-      "code": "2734-502",
-      "region": "Barcarena"
-    },
-    "city": "Oeiras",
-    "country": {
-      "code": "PT",
-      "name": "Portugal"
-    }
-  },
-  "sector": "Broadcast Media Services"
+  ]
 }

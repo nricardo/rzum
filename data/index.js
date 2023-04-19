@@ -1,7 +1,8 @@
 module.exports = {
-  basic: require('./basic'),
-  work: require('./work'),
-  courses: require('./courses'),
-  degree: require('./degree'),
+  basics: require('./basics'),
   skills: require('./skills'),
+  work: require('./work'),
+  education: require('./education'),
+  certificates: require('./certificates'),
+  languages: require('./languages'),
 };

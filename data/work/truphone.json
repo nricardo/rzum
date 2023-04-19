@@ -1,28 +1,12 @@
 {
-  "company": "Truphone️",
-  "website": "https://www.truphone.com/",
-  "position": "Senior Sofware Engineer | Fullstack Developer",
-  "period": {
-    "bgn": { "year": 2018, "month": 4 },
-    "end": null
-  },
-  "summary": "<b>My Truphone App</b>App development for purchasing global data plans and installing them on eSIM capable devices (iOS and Android).<br />Continuos work on moving towards a microservices architecture.",
-  "stack": [
-    "React", "React Native", "Redux", "Redux Saga",
-    "NodeJS", "Loopback", "ExpressJS", "Docker", "Git",
-    "Xcode", "Android Studio", "Graylog", "AWS"
-  ],
-  "address": {
-    "street": "Taguspark, Avenida Professor Doutor Cavaco Silva, Edifício Qualidade B2 3º",
-    "postal": {
-      "code": "2740-120",
-      "region": "Porto Salvo"
-    },
-    "city": "Oeiras",
-    "country": {
-      "code": "PT",
-      "name": "Portugal"
-    }
-  },
-  "sector": "Telecommunications"
+  "name": "Truphone️",
+  "url": "https://www.truphone.com",
+  "position": "Senior Software Engineer | Fullstack Developer",
+  "startDate": "2018-04-01",
+  "summary": "**RSP Portal** - Lead the architecture, design and implementation of Truphone's first web portal for the [RSP platform](https://web.truphone.com/telecoms/consumer-rsp/) using ReactJS, including the backend service (BFF) responsible to route access to the different internal layers of microservices. Implemented the security layer using Keycloak IAM solution as well the auditing system when accessing the service. Responsible for the design, implemention and testing of a full-fledged UI component library from the ground up with the collaboration of the UX/UI team, allowing Truphone's brand and vision integrate into our products as well providing a more ease adoption and transition to use React into new projects/portals using these components. Contributed and helped on the early adoption of migrating services to AWS cloud infrastracture, discussing best-practices and architectural approaches for each service that best matches our goals.<br><br>**My Truphone App** - Bootstrapped 1st Truphone's mobile application for purchasing global data plans and installing them on **eSIM** capable devices (iOS and Android).<br><br> - Continuous help on moving projects/services towards a microservices architecture;<br> - Mentoring more junior team members on getting on-board and guiding them on more complex tasks;<br> - Assistance on implementing in-house as well industry best-practices that keeps our code clean and testable;",
+  "highlights": [
+    "React", "MUI", "Javascript", "Typescript", "Storybook", "Jest", "Rollup", "Webpack", "Vite", "TailwindCSS", "HTML5",
+    "SCSS", "Graylog", "Prometheus", "Grafana", "AWS", "React Native", "Redux", "Redux Saga", "NodeJS",
+    "Loopback", "ExpressJS", "Docker", "Git", "Xcode", "Android Studio"
+  ]
 }

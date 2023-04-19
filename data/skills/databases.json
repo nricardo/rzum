@@ -1,25 +1,32 @@
-{
-  "section": "Database Development",
-  "skills": [
-    {
-      "name": "MongoDB",
-      "level": 0
-    },
-    {
-      "name": "ElasticSearch",
-      "level": 0
-    },
-    {
-      "name": "DSE Graph | Gremlin",
-      "level": 0
-    },
-    {
-      "name": "mySQL",
-      "level": 0
-    },
-    {
-      "name": "SQL Server",
-      "level": 0
-    }
-  ]
-}
+[
+  {
+    "name": "PostgreSQL",
+    "level": "4",
+    "keywords": []
+  },
+  {
+    "name": "mySQL",
+    "level": "4",
+    "keywords": []
+  },
+  {
+    "name": "SQL Server",
+    "level": "3",
+    "keywords": []
+  },
+  {
+    "name": "MongoDB",
+    "level": "2",
+    "keywords": []
+  },
+  {
+    "name": "ElasticSearch",
+    "level": "1",
+    "keywords": []
+  },
+  {
+    "name": "DSE Graph | Gremlin",
+    "level": "2",
+    "keywords": []
+  }
+]

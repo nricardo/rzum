@@ -20,7 +20,7 @@ class jSON {
 
     // read template
     this.log.debug('loading Résumé template...');
-    const template = fs.readFileSync(path.resolve(__dirname, '../templates/resume.dust'), 'utf-8');
+    const template = fs.readFileSync(path.resolve(__dirname, '../templates/resume.hbs'), 'utf-8');
 
     // compile final JSON template
     this.log.debug('rendering template with data...');

@@ -1,13 +1,22 @@
-{
-  "section": "Continuous Integration / Continuous Deployment",
-  "skills": [
-    {
-      "name": "Jenkins",
-      "level": 0
-    },
-    {
-      "name": "Docker",
-      "level": 0
-    }
-  ]
-}
+[
+  {
+    "name": "Docker",
+    "level": "4",
+    "keywords": []
+  },
+  {
+    "name": "Kubernetes",
+    "level": "2",
+    "keywords": []
+  },
+  {
+    "name": "GitLab Pipelines",
+    "level": "4",
+    "keywords": []
+  },
+  {
+    "name": "Jenkins",
+    "level": "4",
+    "keywords": []
+  }
+]

@@ -1,27 +1,12 @@
 {
-  "company": "BNP Paribas Portugal",
-  "website": "http://www.bnpparibas.pt",
-  "position": "Senior Sofware Engineer / Web Developer",
-  "period": {
-    "bgn": { "year": 2017, "month": 6 },
-    "end": { "year": 2017, "month": 12 }
-  },
+  "name": "BNP Paribas Portugal",
+  "url": "http://www.bnpparibas.pt",
+  "position": "Senior Software Engineer / Web Developer",
+  "startDate": "2017-06-01",
+  "endDate": "2017-12-01",
   "summary": "Design and implementation of a software solution for staff management and project planning (time allocation, skill management, ...).",
-  "stack": [
+  "highlights": [
     "AngularJS", "HTML5", "CSS3", "SASS/SCSS", "Material Design", "ES6",
     "D3.js", "Webpack", "GIT", "NodeJS", "ExpressJS", "DSE Graph", "Gremlin"
-  ],
-  "address": {
-    "street": "Torre Ocidente, Rua Galileu Galilei, 2, 13º",
-    "postal": {
-      "code": "1500-392",
-      "region": "Lisboa"
-    },
-    "city": "Lisboa",
-    "country": {
-      "code": "PT",
-      "name": "Portugal"
-    }
-  },
-  "sector": "Banking and Financial Services"
+  ]
 }

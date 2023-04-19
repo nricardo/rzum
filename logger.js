@@ -17,8 +17,10 @@ class Logger {
   log(msg, level, label) {
     const stamp = new Date().toISOString();
 
-    if (this.level >= level) fs.writeFile(this.logfile, `${stamp} [${label}][${this.name}]: ${msg}\n`, {flag: 'a'}, () => {});
-    // if (this.level >= level) this._debug(`[${label}]: ${msg}`);
+    if (this.level >= level) {
+      fs.writeFile(this.logfile, `${stamp} [${label}][${this.name}]: ${msg}\n`, {flag: 'a'}, () => {});
+      this._debug(`[${label}]: ${msg}`);
+    }
   }
 
   error(msg) {
